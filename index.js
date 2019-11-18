@@ -5,6 +5,7 @@ const inquirer = require("inquirer");
 const pdf = require("html-pdf");
 // import modules
 const generateHTML = require("./generateHTML");
+const options = { format: "Letter" };
 
 inquirer
   .prompt([
@@ -26,8 +27,10 @@ inquirer
   .then(data => {
     const queryUrl = `https://api.github.com/users/${data.username}`;
     axios.get(queryUrl).then(response => {
-      console.log(response);
-      const html = generateHTML(data.color, response);
-      console.log(html);
+      const html = generateHTML(data.color, response.data);
+      pdf.create(html, options).toFile("resume.pdf", function(err, res) {
+        if (err) return console.log(err);
+        console.log(res);
+      });
     });
   });

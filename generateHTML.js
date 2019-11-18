@@ -53,9 +53,11 @@ function generateHTML(color, data) {
          }
          h4 {
          font-size: 1.5em;
+         color: #000000;
          }
          h5 {
          font-size: 1.3em;
+         color: #000000;
          }
          h6 {
          font-size: 1.2em;
@@ -85,6 +87,7 @@ function generateHTML(color, data) {
          .photo-header h1, .photo-header h2 {
          width: 100%;
          text-align: center;
+         color: #000000;
          }
          .photo-header h1 {
          margin-top: 10px;
@@ -98,6 +101,7 @@ function generateHTML(color, data) {
          .nav-link {
          display: inline-block;
          margin: 5px 10px;
+         color: #000000;
          }
          .workExp-date {
          font-style: italic;
